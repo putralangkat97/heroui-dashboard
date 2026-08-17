@@ -56,3 +56,39 @@ export function IconMoon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function IconUser(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...BaseIcon(props)}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+    </svg>
+  );
+}
+
+export function IconSettings(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...BaseIcon(props)}>
+      <path d="M4 7h9M17 7h3M4 17h3M11 17h9" />
+      <circle cx="13" cy="7" r="2" />
+      <circle cx="7" cy="17" r="2" />
+    </svg>
+  );
+}
+
+export function IconLogOut(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...BaseIcon(props)}>
+      <path d="M9 4H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3" />
+      <path d="M13 8l4 4-4 4M17 12H8.5" />
+    </svg>
+  );
+}
+
+export function IconChevronsUpDown(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...BaseIcon(props)}>
+      <path d="M7 15l5 5 5-5M7 9l5-5 5 5" />
+    </svg>
+  );
+}

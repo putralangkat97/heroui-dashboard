@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ScrollShadow, Separator, cn } from "@heroui/react";
 
+import { UserMenu } from "@/components/layout/user-menu";
 import { NAV_ITEMS } from "@/lib/navigation";
 
 export function AppSidebar() {
@@ -12,7 +13,7 @@ export function AppSidebar() {
   return (
     <aside className="hidden w-64 shrink-0 flex-col border-r border-border bg-surface lg:flex">
       <div className="flex h-16 items-center gap-2 px-6">
-        <div className="flex size-6 items-center justify-center rounded-lg bg-accent text-sm font-bold text-accent-foreground">
+        <div className="flex size-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-accent-foreground">
           L
         </div>
         <span className="font-semibold text-foreground">LKE Admin</span>
@@ -46,6 +47,12 @@ export function AppSidebar() {
           })}
         </nav>
       </ScrollShadow>
+
+      <Separator />
+
+      <div className="p-3">
+        <UserMenu />
+      </div>
     </aside>
   );
 }
