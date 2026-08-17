@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   description: "Admin dashboard untuk Lembar LKE",
 };
 
+const themeInitScript = `
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var isDark = stored ? stored === "dark" : prefersDark;
+      document.documentElement.classList.toggle("dark", isDark);
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -24,6 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         {children}
       </body>
